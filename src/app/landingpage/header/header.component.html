@@ -131,7 +131,7 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li *ngFor="let p of categorylist"><a routerLink="/product" (click)="getCategory(p.name)">{{p.name}}</a></li>
+                        <li *ngFor="let p of categorylist"><a routerLink="/product" (click)="getCategory(p.name); productserv">{{p.name}}</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
