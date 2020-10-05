@@ -1,0 +1,25 @@
+     <!-- container -->
+      <div class="container">
+          <h3>Product > {{category}}</h3>
+        <div class="row">
+          <!-- card -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-6" *ngFor="let p of vegetableslist">    
+                <div class="outlined p-3">
+                  <img [src]="p.image" class="card-img-top w-100" style="width: 20rem; height: 18rem;" alt="{{p.name}}" >
+                    <div class="card-footer">
+                     <h4 class="text-success text-capitalize font-weight-bold">{{p.name}}</h4>
+                     <h5 class="font-weight-bold">{{p.price}}<small>/kg</small></h5>
+                     <p><em>{{p.description}}</em></p>
+                      <a href="#" class="btn btn-success mb-2 w-100">Tawad</a>
+                      <a href="#" class="btn btn-outline-success mb-2 w-100">Add to Bayong</a>
+                   </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- card -->
+         </div>
+      </div>
+     <!-- container -->

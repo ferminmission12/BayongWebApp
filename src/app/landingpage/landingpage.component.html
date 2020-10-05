@@ -1,0 +1,184 @@
+      
+      <!-- Banner Carousel -->
+      <!-- container -->
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                  <li data-target="#myCarousel" data-slide-to="4"></li>
+                  <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+            
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" >
+                  <div class="item active">
+                      <img src="/assets/img/Banner/onlinebayong.jpg" alt="Fish Products">
+                  </div> 
+                  <div class="item">
+                    <img src="/assets/img/Banner/meat.jpg" alt="Fish Products">
+                  </div>    
+                  <div class="item">
+                    <img src="/assets/img/Banner/fish.jpg" alt="Meat Products">
+                  </div>          
+                  <div class="item">
+                    <img src="/assets/img/Banner/fruit.jpg" alt="Fruits Products">
+                  </div>
+                  <div class="item">
+                      <img src="/assets/img/Banner/gulay.jpg" alt="Vegetables Products">
+                  </div>
+                  <div class="item">
+                      <img src="/assets/img/Banner/spices.jpg" alt="Spices Products">
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!-- /container -->
+      <!-- Banner Carousel -->
+
+      <!-- Meat -->
+      <!-- container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-6">            
+            <div class="outlined p-3">
+              <img src="assets/img/Categories/meat.png" class="card-img-top w-100" style="height: 33rem;" alt="meat">
+            </div> 
+          </div>   
+          <!-- card -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-6" *ngFor="let p of meatlist">    
+                <div class="outlined p-3">
+                  <img [src]="p.image" class="card-img-top w-100" style="width: 20rem; height: 18rem;" alt="{{p.name}}" >
+                  <div class="card-footer">
+                    <h4 class="text-success text-capitalize font-weight-bold">{{p.name}}</h4>
+                    <h5 class="font-weight-bold">{{p.price}}<small>/kg</small></h5>
+                    <p><em>{{p.description}}</em></p>
+                    <a href="#" class="btn btn-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1" [class.btn-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Tawad": "Tawad" }}</a>
+                    <a href="#" class="btn btn-outline-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1"  [class.btn-outline-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Out of Stock ": "Add to Bayong" }}</a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- card -->
+         </div>
+      </div>
+      <!-- container -->
+      <!-- Meat -->
+
+       <!-- Seafood -->
+       <!-- container -->
+       <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-6">            
+            <div class="outlined p-3">
+              <img src="assets/img/Categories/seafood.png" class="card-img-top w-100" style="height: 33rem;" alt="meat">
+            </div> 
+          </div>   
+          <!-- card -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-6" *ngFor="let p of seafoodlist">    
+                <div class="outlined p-3">
+                  <img [src]="p.image" class="card-img-top w-100" style="width: 20rem; height: 18rem;" alt="{{p.name}}" >
+                  <div class="card-footer">
+                    <h4 class="text-success text-capitalize font-weight-bold">{{p.name}}</h4>
+                    <h5 class="font-weight-bold">{{p.price}}<small>/kg</small></h5>
+                    <p><em>{{p.description}}</em></p>
+                    <a href="#" class="btn btn-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1" [class.btn-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Tawad": "Tawad" }}</a>
+                    <a href="#" class="btn btn-outline-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1"  [class.btn-outline-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Out of Stock ": "Add to Bayong" }}</a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- card -->
+         </div>
+       </div>
+      <!-- container -->
+      <!-- Seafood -->
+
+      <!-- Vegetables -->
+      <!-- container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-6">            
+            <div class="outlined p-3">
+              <img src="assets/img/Categories/vegetables.png" class="card-img-top w-100" style="height: 33rem;" alt="vegetables">
+            </div> 
+          </div>   
+          <!-- card -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-6" *ngFor="let p of vegetableslist">    
+                <div class="outlined p-3">
+                  <img [src]="p.image" class="card-img-top w-100" style="width: 20rem; height: 18rem;" alt="{{p.name}}" >
+                  <div class="card-footer">
+                    <h4 class="text-success text-capitalize font-weight-bold">{{p.name}}</h4>
+                    <h5 class="font-weight-bold">{{p.price}}<small>/kg</small></h5>
+                    <p><em>{{p.description}}</em></p>
+                    <a href="#" class="btn btn-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1" [class.btn-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Tawad": "Tawad" }}</a>
+                    <a href="#" class="btn btn-outline-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1"  [class.btn-outline-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Out of Stock ": "Add to Bayong" }}</a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- card -->
+         </div>
+      </div>
+     <!-- container -->
+     <!-- Vegetables -->
+
+        <!-- Fruits -->
+      <!-- container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-6">            
+            <div class="outlined p-3">
+              <img src="assets/img/Categories/fruits.png" class="card-img-top w-100" style="height: 33rem;" alt="meat">
+            </div> 
+          </div>   
+          <!-- card -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-6" *ngFor="let p of fruitlist">    
+                <div class="outlined p-3">
+                  <img [src]="p.image" class="card-img-top w-100" style="width: 20rem; height: 18rem;" alt="{{p.name}}">         
+                  <div class="card-footer">
+                    <h4 class="text-success text-capitalize font-weight-bold">{{p.name}}</h4>
+                    <h5 class="font-weight-bold">{{p.price}}<small>/kg</small></h5>
+                    <p><em>{{p.description}}</em></p>
+                    <a href="#" class="btn btn-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1" [class.btn-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Tawad": "Tawad" }}</a>
+                    <a href="#" class="btn btn-outline-success mb-2 w-100"
+                    [class.disabled]="p.quantity < 1"  [class.btn-outline-danger]="p.quantity < 1"
+                    >{{p.quantity < 1 ? "Out of Stock ": "Add to Bayong" }}</a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- card -->
+         </div>
+      </div>
+      <!-- container -->
+      <!-- Meat -->
