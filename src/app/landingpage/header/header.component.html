@@ -131,11 +131,7 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li><a routerLink="/product">Meat</a></li>
-                        <li><a routerLink="/product">Seafood</a></li>
-                        <li><a routerLink="/product">Vegetables</a></li>
-                        <li><a routerLink="/product">Fruits</a></li>
-                        <li><a routerLink="/product">Spices & Etc</a></li>
+                        <li *ngFor="let p of categorylist"><a routerLink="/product" (click)="getCategory(p.name)">{{p.name}}</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>

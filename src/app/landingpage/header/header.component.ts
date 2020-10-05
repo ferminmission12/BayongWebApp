@@ -1,5 +1,6 @@
 import { Component, OnInit,HostListener } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
+import { Categorydetail } from 'src/app/models/categorydetail.model';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HeaderComponent implements OnInit {
   sideBarOpen: boolean = false;
+  categorylist:Categorydetail[];
   constructor(private productservice:ProductService) { }
 
   @HostListener('click', ['$event.target.id'])onClick(id: any) {
@@ -25,7 +27,20 @@ export class HeaderComponent implements OnInit {
   }
  
   ngOnInit(): void {
+    this.getCategories();
   }
   toggleSideBar() {
+  }
+  getCategories(){
+    this.productservice.getAllCategory().subscribe(
+      res=>{
+        this.categorylist=res as Categorydetail[]
+        //console.log(this.productlist)
+      }
+    )
+  }
+  getCategory(name){
+     console.log(name)
+     this.productservice.saveCategoryname(name);
   }
 }

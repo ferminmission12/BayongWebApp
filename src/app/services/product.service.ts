@@ -17,8 +17,13 @@ export class ProductService {
   getAllProduct(categoryname){
    return this.http.get(this.SERVER_URL+"/ProductDetails/byCategory/"+ categoryname);
   }
-  getCategoryname(categoryname){
-    this.category=categoryname;
+  getAllCategory(){
+    return this.http.get(this.SERVER_URL+"/CategoryDetails");
+   }
+   getCategoryname(category){
+    console.log(category);
+   }
+   public saveCategoryname(value){
+    this.category=value;
   }
-
 }
