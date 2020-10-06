@@ -1,6 +1,7 @@
 import { Component, OnInit,HostListener } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Categorydetail } from 'src/app/models/categorydetail.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { Categorydetail } from 'src/app/models/categorydetail.model';
 export class HeaderComponent implements OnInit {
   sideBarOpen: boolean = false;
   categorylist:Categorydetail[];
-  constructor(private productservice:ProductService) { }
+  constructor(private productservice:ProductService, private router:Router) { }
 
   @HostListener('click', ['$event.target.id'])onClick(id: any) {
     if (id == "collapseBtn") {
@@ -40,7 +41,15 @@ export class HeaderComponent implements OnInit {
     )
   }
   getCategory(name){
-     console.log(name)
      this.productservice.saveCategoryname(name);
+     localStorage.setItem('category', name); // setting
+     console.log(localStorage.getItem('category')); 
+     this.router.navigate(['/product/'], {
+      queryParams: {
+        category: localStorage.getItem('category')
+      },
+      queryParamsHandling: 'merge',
+    });
   }
+  
 }
