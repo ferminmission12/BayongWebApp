@@ -8,6 +8,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BayongComponent } from './bayong/bayong.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { BayongComponent } from './bayong/bayong.component';
     FooterComponent,
     LandingpageComponent,
     ProductComponent,
-    BayongComponent
+    BayongComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

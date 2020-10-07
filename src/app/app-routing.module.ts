@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { ProductComponent } from './product/product.component';
 import { BayongComponent } from './bayong/bayong.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
   },
   {
     path:"product",component:ProductComponent
+  }
+  ,
+  {
+    path:"checkout",component:CheckoutComponent
   }
 
 ];
