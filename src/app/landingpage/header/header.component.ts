@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit {
       this.sideBarOpen = true;
      }    
     } else {
-    
+      document.getElementById('responsive-nav').classList.remove('showsidebar');
+      this.sideBarOpen=false;
     }
   }
  
@@ -42,8 +43,7 @@ export class HeaderComponent implements OnInit {
   }
   getCategory(name){
      this.productservice.saveCategoryname(name);
-     localStorage.setItem('category', name); // setting
-     console.log(localStorage.getItem('category')); 
+     localStorage.setItem('category', name); 
      this.router.navigate(['/product/'], {
       queryParams: {
         category: localStorage.getItem('category')

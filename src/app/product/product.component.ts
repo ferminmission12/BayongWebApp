@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
       if (e instanceof NavigationEnd) {
-        this.getSpecificProduct(localStorage.getItem('category'));
+        this.getSpecificProduct(this.category);
       }
     });
   }
@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
     if(localStorage.getItem('token')!=null){
       this.router.navigate(['/product/'], {
         queryParams: {
-          category: localStorage.getItem('category')
+          category: this.category
         },
         queryParamsHandling: 'merge',
       });
@@ -35,7 +35,9 @@ export class ProductComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
-  
+  get category(): any {
+    return localStorage.getItem('category');
+  }
   ngOnDestroy(): void{
     if (this.navigationSubscription) {
       this.navigationSubscription.unsubscribe();

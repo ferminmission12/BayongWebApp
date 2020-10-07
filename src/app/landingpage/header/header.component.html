@@ -4,13 +4,14 @@
     <div id="top-header">
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="#"><i class="fa fa-map-marker"></i> Enter to Nearest Palengke</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#enterlocation"><i class="fa fa-map-marker"></i> Enter to Nearest Palengke</a></li>
                 <li><a href="#"> About Bayong</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#"><i class="fa fa-shop"></i> Be a Seller</a></li>
+                <li><a href="#"><i class="fa fa-store"></i> Be a Seller</a></li>
                 <li><a href="#"><i class="fa fa-truck"></i> Track My Order</a></li>
-                <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#actionmodal">Login</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#actionmodal">Sign Up</a></li>
             </ul>
         </div>
     </div>
@@ -108,7 +109,7 @@
 
                         <!-- Menu Toogle -->
                         <div class="menu-toggle" id="collapseBtn" (click)="toggleSideBar()">
-                            <a href="#" id="collapseBtn" (click)="toggleSideBar()">
+                            <a id="collapseBtn" (click)="toggleSideBar()">
                                 <i class="fa fa-bars"id="collapseBtn" (click)="toggleSideBar()"></i>
                                 <span id="collapseBtn" (click)="toggleSideBar()">Categories</span>
                             </a>
@@ -118,7 +119,7 @@
                 </div>
                 <!-- /ACCOUNT -->
             </div>
-            <!-- row -->
+               <!-- row -->
         </div>
         <!-- container -->
     </div>
@@ -143,4 +144,116 @@
 <!-- /HEADER -->
 
 
-   
+<div id="actionmodal" class="modal fade">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">	
+                <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true" style="font-size: 40px;">&times;</button>
+				      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#Signup" aria-controls="Signup" role="tab" data-toggle="tab">Signup</a>
+                        </li>
+                        <li role="presentation"><a href="#Login" aria-controls="Login" role="tab" data-toggle="tab">Login</a>
+                        </li>
+                      </ul>
+			</div>
+			<div class="modal-body">
+				<div class="row">   
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane active" id="Signup">
+                            <form action="/examples/actions/confirmation.php" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Email or Mobile Number" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Enter Password" required="required">					
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password" required="required">					
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Signup">
+                                </div>
+                                
+                            </form>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="Login">
+                            <form action="/examples/actions/confirmation.php" method="post">
+                                <div class="form-group">
+                               
+                                    <input type="text" class="form-control" placeholder="Email or Mobile Number" required="required">
+                                </div>
+                                <div class="form-group">
+                                 
+                                    <input type="password" class="form-control" placeholder="Password" required="required">					
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                                </div>
+                            </form>
+                          </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>   
+<div id="enterlocation" class="modal fade">
+	<div class="modal-dialog modal-palengkelocation">
+		<div class="modal-content">
+			<div class="modal-header">	
+                <h5 class="modal-title">Find your nearest palengke</h5>
+                <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true" style="font-size: 40px;">&times;</button>
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control input-md" placeholder="Enter your location" />
+                                <span class="input-group-btn">
+                                   <button class="btn btn-info btn-md" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                    
+                </div>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+                    <ul class="list-group border-0">
+                        <li class="list-group-item border-0">
+                            Mega Q-Mart (Quezon City, Metro Manila)
+                        </li>
+                        <li class="list-group-item border-0">
+                            Bocaue Public Market(Bocaue, Bulacan)
+                        </li>
+                        <li class="list-group-item border-0">
+                            Marilao Wet Market(Marilao, Bulacan)
+                        </li>
+                        <li class="list-group-item border-0">
+                            Cubao Public Market(Quezon City, Metro Manila)
+                        </li>
+                        <li class="list-group-item border-0">
+                            Alibaba Dry Market(Sta Maria, Pangasinan)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">	
+                <a href="#">Can't find your Palengke?</a>
+            </div>
+		</div>
+	</div>
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
