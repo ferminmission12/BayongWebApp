@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverurl:"https://localhost:44330/api"
+  serverurl:"http://beta.bayongwebappcore.com/api"
 };
 
 /*
